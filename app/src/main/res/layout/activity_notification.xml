@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    tools:context=".NotificationActivity">
+
+    <LinearLayout
+        android:id="@+id/textFieldsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/form_buttonSave"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/notificationIdTextView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Notification ID"/>
+
+        <TextView
+            android:id="@+id/notificationMessageTextView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Notification Message"/>
+
+        <TextView
+            android:id="@+id/notificationStatusTextView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Notification Status"/>
+
+        <!-- You can add more TextViews here for other notification information -->
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/form_buttonSave"
+        android:text="Save Notification"
+        android:minHeight="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
