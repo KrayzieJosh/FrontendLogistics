@@ -5,7 +5,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import za.ac.cput.R;
-import za.ac.cput.domain.Location;
+import za.ac.cput.domain.Location; // imports from backend not working !!
 import za.ac.cput.factory.LocationFactory;
 
 public class LocationActivity extends AppCompatActivity {
