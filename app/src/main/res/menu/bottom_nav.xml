@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/schedule"
+        android:icon="@drawable/baseline_schedule_24"
+        android:title="Restaurants"/>
+    <item
+        android:id="@+id/drafts"
+        android:icon="@drawable/baseline_drafts_24"
+        android:title="Specials"/>
+
+    <item
+        android:id="@+id/calendar"
+        android:icon="@drawable/baseline_calendar_month_24"
+        android:title="Cart"/>
+
+    <item
+        android:id="@+id/settingsCog"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="Profile"/>
+
+</menu>

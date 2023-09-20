@@ -1,43 +1,43 @@
 package za.ac.cput.view;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 
 import za.ac.cput.R;
-// import za.ac.cput.domain.Location; // imports from backend not working !!
-// import za.ac.cput.factory.LocationFactory;
 
-public class LocationActivity extends AppCompatActivity {
 
+public class LocationActivity extends AppCompatActivity implements OnMapReadyCallback {
+    private GoogleMap mMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
 
-        // Create a Location object using the factory
-       // Location location = LocationFactory.createLocation(
-        //        null, // Leave locationId as null to generate it
-       //         "My Location",
-       //         123,
-       //         "Main Street",
-       //         "Cityville",
-        //        12345
-       // );
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.mapFragment);
+        mapFragment.getMapAsync(this);
+        //TextField
+        EditText addressBar = findViewById(R.id.editTextLocationName);
 
-        // Find the TextView in your XML layout
-        //TextView textView = findViewById(R.id.locationTextView);
+        //Button
+        Button btnCreateLoc = findViewById(R.id.btnCreateLocation);
+       // @Override
+       // public void onMapReady(GoogleMap googleMap) {
+           // mMap = googleMap;
 
-        // Display the location details in the TextView
-        //if (location != null) {
-        //    String locationDetails = "Location ID: " + location.getLocationId() + "\n" +
-        //            "Name: " + location.getName() + "\n" +
-        //            "Street Number: " + location.getStreetNumber() + "\n" +
-        //            "Street Name: " + location.getStreetName() + "\n" +
-        //            "Town or City: " + location.getTownOrCity() + "\n" +
-        //            "Area Code: " + location.getAreaCode();
+            // Customize and use the Google Map here
+        }
 
-        //    textView.setText(locationDetails);
-      //  }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
     }
 }

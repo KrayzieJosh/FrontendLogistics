@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION" />
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyCNLpXoSOY6SYu6ziGUassM4dLhVR5TuWQ" />
 
     <application
         android:allowBackup="true"
@@ -11,9 +16,43 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.FrontendLogistics"
+        tools:node="merge"
         tools:targetApi="31">
         <activity
-            android:name=".LocationActivity"
+            android:name=".view2.Calendar"
+            android:exported="false" />
+        <activity
+            android:name=".view2.Drafts"
+            android:exported="false" />
+        <activity
+            android:name=".view2.Schedule"
+            android:exported="false" />
+        <activity
+            android:name=".view.LocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.Delivery"
+            android:exported="false" />
+        <activity
+            android:name=".view.History"
+            android:exported="false" />
+        <activity
+            android:name=".view.TrackDriver"
+            android:exported="false" />
+        <activity
+            android:name=".view.Quotes"
+            android:exported="false" />
+        <activity
+            android:name=".view.Projects"
+            android:exported="false" />
+        <activity
+            android:name=".view2.Settings"
+            android:exported="false" />
+        <activity
+            android:name=".ManagerHomePage"
+            android:exported="false" />
+        <activity
+            android:name=".view.Location"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

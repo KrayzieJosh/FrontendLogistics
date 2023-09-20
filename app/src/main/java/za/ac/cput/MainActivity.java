@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Open the LocationActivity when the button is clicked
-                Intent intent = new Intent(MainActivity.this, LocationActivity.class);
+                Intent intent = new Intent(MainActivity.this, ManagerHomePage.class);
                 startActivity(intent);
             }
         });
