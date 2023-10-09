@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 
+import java.util.UUID;
+
 import za.ac.cput.R;
 import za.ac.cput.create.CreateCompany;
 
@@ -24,7 +26,7 @@ public class CompanyRegistration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_registration);
         CreateCompany company = new CreateCompany(this, "http://192.168.18.8:8080/company/create");
-        companyId= findViewById(R.id.company_id_txt);
+        UUID uuid = UUID.randomUUID();
         companyName = findViewById(R.id.company_name_txt);
         companyPhysicalAddress = findViewById(R.id.company_physical_address_txt);
         companyEmail = findViewById(R.id.company_email_txt);
@@ -32,7 +34,7 @@ public class CompanyRegistration extends AppCompatActivity {
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String id=companyId.getText().toString();
+                String id = uuid.toString();
                 String name = companyName.getText().toString();
                 String address = companyPhysicalAddress.getText().toString();
                 String email = companyEmail.getText().toString();
@@ -42,7 +44,7 @@ public class CompanyRegistration extends AppCompatActivity {
 
                     @Override
                     public void onSuccess() {
-                        Log.d("Debug","Id" + id);
+                        Log.d("Debug","Id: " + id);
                         Log.d("Debug", "Name: " + name);
                         Log.d("Debug", "Address: " + address);
                         Log.d("Debug", "Email: " + email);
