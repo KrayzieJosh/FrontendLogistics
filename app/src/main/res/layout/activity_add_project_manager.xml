@@ -26,6 +26,15 @@
             android:textStyle="bold"
             android:typeface="serif" />
         <EditText
+            android:id="@+id/project_manager_position_txt"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:hint="Project Manager Position"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+        <EditText
             android:id="@+id/project_manager_name_txt"
             android:layout_width="match_parent"
             android:layout_height="55dp"
