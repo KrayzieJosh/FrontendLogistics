@@ -9,6 +9,10 @@ private String position;
     private String contact;
     private String email;
 
+
+    public ProjectManager() {
+    }
+
     public ProjectManager(String projectManagerId, String position, String firstName,
                           String middleName, String lastName, String contact, String email) {
         this.projectManagerId = projectManagerId;

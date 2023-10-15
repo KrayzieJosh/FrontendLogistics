@@ -22,11 +22,12 @@ public class CreateProjectManager {
     }
 
     public interface CreateProjectManagerListener {
-        void onSuccess(); // Define additional parameters if needed
+        void onSuccess();
 
         void onError(VolleyError error);
+
     }
-    public void projectManagerCreation(String projectManagerId,String firstName, String middleName,
+    public void projectManagerCreation(String projectManagerId,String position,String firstName, String middleName,
                                        String lastName,String contact, String email,
                                        CreateProjectManager.CreateProjectManagerListener listener) {
         RequestQueue queue = Volley.newRequestQueue(context);
@@ -37,6 +38,7 @@ public class CreateProjectManager {
         try {
             // Add properties to the JSON object
             jsonObject.put("projectManagerId",projectManagerId);
+            jsonObject.put("position",position);
             jsonObject.put("firstName", firstName);
             jsonObject.put("middleName", middleName);
             jsonObject.put("lastName", lastName);

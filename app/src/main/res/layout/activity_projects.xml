@@ -6,4 +6,87 @@
     android:layout_height="match_parent"
     tools:context=".view.Projects">
 
+    <Button
+        android:id="@+id/add_projectbtn"
+        android:layout_width="186dp"
+        android:layout_height="55dp"
+        android:text="Create Project"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <TextView
+        android:id="@+id/create_project_txt"
+        android:layout_width="406dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="44dp"
+        android:text="Create A New Project"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+        <EditText
+            android:id="@+id/project_name_txt"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Project Name"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="2dp"
+            tools:layout_editor_absoluteY="152dp" />
+
+        <EditText
+            android:id="@+id/project_status_txt"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="25dp"
+            android:hint="Project status"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="2dp"
+            tools:layout_editor_absoluteY="152dp" />
+
+        <Spinner
+            android:id="@+id/project_manager_spinner_sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:minHeight="48dp"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/siteManagerSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginTop="25dp"
+            android:spinnerMode="dropdown"
+            />
+
+
+
+
+
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

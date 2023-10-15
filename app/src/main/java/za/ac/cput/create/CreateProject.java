@@ -1,8 +1,5 @@
 package za.ac.cput.create;
 import android.content.Context;
-import android.util.Log;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -13,10 +10,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.sql.Driver;
-
-import za.ac.cput.model.Company;
-import za.ac.cput.model.DeliveryOrder;
 import za.ac.cput.model.ProjectManager;
 import za.ac.cput.model.SiteManager;
 
@@ -36,9 +29,13 @@ public class CreateProject {
         void onError(VolleyError error);
     }
 
-    public void projectCreation(String projectId, String projectName, String projectStatus, Driver driver,
-                                ProjectManager projectManager, SiteManager siteManager, Company company,
-                                DeliveryOrder deliveryOrder, CreateProject.CreateProjectListener listener) {
+    public void projectCreation(String projectId, String projectName, String projectStatus,
+                                String projectManagerId, String siteManagerId, /*Company company,*/
+                                CreateProjectListener listener) {
+        SiteManager siteManager = new SiteManager();
+        siteManagerId =siteManager.getSiteManagerId();
+        ProjectManager manager= new ProjectManager();
+        projectManagerId = manager.getProjectManagerId();
         RequestQueue queue = Volley.newRequestQueue(context);
         String url = baseUrl;
 
@@ -49,11 +46,10 @@ public class CreateProject {
             jsonObject.put("projectId",projectId);
             jsonObject.put("projectName", projectName);
             jsonObject.put("projectStatus", projectStatus);
-            jsonObject.put("driver", driver);
-            jsonObject.put("projectManager", projectManager);
-            jsonObject.put("siteManager", siteManager);
-            jsonObject.put("company", company);
-            jsonObject.put("deliveryOrder", deliveryOrder);
+
+        jsonObject.put("projectManagerId", projectManagerId);
+                jsonObject.put("siteManagerId", siteManagerId);
+            //jsonObject.put("company", company.getCompanyId());
 
 
             // Create the POST request
@@ -66,6 +62,7 @@ public class CreateProject {
                         public void onResponse(JSONObject response) {
 
 
+
                             // Handle the success response from the backend
                             if (listener != null) {
                                 listener.onSuccess();
@@ -76,7 +73,7 @@ public class CreateProject {
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             // Handle the error response
-                            if (listener != null) {
+                            if (listener == null) {
                                 listener.onError(error);
                             }
                         }

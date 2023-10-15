@@ -9,6 +9,9 @@ public class SiteManager {
     private String contact;
     private String email;
 
+    public SiteManager() {
+    }
+
     public String getSiteManagerId() {
         return siteManagerId;
     }

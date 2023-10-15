@@ -2,6 +2,7 @@ package za.ac.cput.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,6 +46,7 @@ public class AddSiteManager extends AppCompatActivity {
                     @Override
                     public void onSuccess() {
                         Toast.makeText(getApplicationContext(), "Object created successfully", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(AddSiteManager.this,Projects.class));
                         siteManagerID.setText("");
                         firstName.setText("");
                         middleName.setText("");
