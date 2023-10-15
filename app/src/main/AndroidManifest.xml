@@ -55,6 +55,21 @@
             android:name=".view.Location"
             android:exported="false" />
         <activity
+            android:name=".view.MaterialQuoteCreate"
+            android:exported="false"/>
+        <activity
+            android:name=".view.ReadAllMaterialQuotes"
+            android:exported="false"/>
+        <activity
+            android:name=".view.DeleteMaterialQuote"
+            android:exported="false"/>
+        <activity
+            android:name=".view.DeliveryOrderCreate"
+            android:exported="false"/>
+        <activity
+            android:name=".view.DeleteDeliveryOrder"
+            android:exported="false"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

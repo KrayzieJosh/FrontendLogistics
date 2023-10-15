@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    tools:context=".MainActivity">
+
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/textViewDeliveryOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Delivery Order"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#322F2F"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/deliveryOrderId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="Delivery Order ID" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/deliveryAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="Delivery Address" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/deliveryDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="Delivery Date" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/deliveryOrderSaveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#8BC34A"
+        android:minHeight="60dp"
+        android:text="Save Delivery Order"
+        android:textColorHighlight="#8BC34A"
+        android:textColorLink="#8BC34A"
+        app:backgroundTint="#8BC34A" />
+
+</RelativeLayout>
