@@ -29,10 +29,10 @@ public class MaterialQuoteCreate extends AppCompatActivity {
         CreateMaterialQuote materialQuote = new CreateMaterialQuote(this, "http://192.168.18.178:8080/materialQuote/create");
         UUID uuid = UUID.randomUUID();
 
-        materialName = findViewById(R.id.Material_name);
-        materialPrice = findViewById(R.id.text_price);
-        materialQuantity = findViewById(R.id.text_Quantity);
-        materialWeight = findViewById(R.id.txt_weight);
+        materialName = findViewById(R.id.form_textFieldName);
+        materialPrice = findViewById(R.id.form_textFieldPrice);
+        materialQuantity = findViewById(R.id.form_textFieldQuantity);
+        materialWeight = findViewById(R.id.form_textFieldWeight);
         create = findViewById(R.id.form_buttonSave);
 
         create.setOnClickListener(new View.OnClickListener() {
