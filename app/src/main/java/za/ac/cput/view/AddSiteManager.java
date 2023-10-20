@@ -16,7 +16,7 @@ import za.ac.cput.create.CreateProjectManager;
 import za.ac.cput.create.CreateSiteManager;
 
 public class AddSiteManager extends AppCompatActivity {
-    EditText siteManagerID,firstName,middleName,lastName,contact,email;
+    EditText siteManagerID,firstName,middleName,lastName,contact,email,position;
     Button addManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class AddSiteManager extends AppCompatActivity {
         setContentView(R.layout.activity_add_site_manager);
         CreateSiteManager siteManager = new CreateSiteManager(this,"http://192.168.18.8:8080/siteManager/create");
         siteManagerID = findViewById(R.id.site_manager_id_txt);
+        position = findViewById(R.id.site_manager_position_txt);
         firstName=findViewById(R.id.site_manager_name_txt);
         middleName = findViewById(R.id.site_manager_middle_name_txt);
         lastName = findViewById(R.id.site_manager_last_name_txt);
@@ -35,12 +36,13 @@ public class AddSiteManager extends AppCompatActivity {
             public void onClick(View view) {
 
                 String id = siteManagerID.getText().toString();
+                String siteManagerPosition=position.getText().toString();
                 String fName=firstName.getText().toString();
                 String mName=middleName.getText().toString();
                 String lName = lastName.getText().toString();
                 String cont = contact.getText().toString();
                 String em=email.getText().toString();
-                siteManager.siteManagerCreation(id,fName,mName,lName,cont,em,new CreateSiteManager.CreateSiteManagerListener(){
+                siteManager.siteManagerCreation(id,siteManagerPosition,fName,mName,lName,cont,em,new CreateSiteManager.CreateSiteManagerListener(){
 
 
                     @Override
@@ -48,6 +50,7 @@ public class AddSiteManager extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Object created successfully", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(AddSiteManager.this,Projects.class));
                         siteManagerID.setText("");
+                        position.setText("");
                         firstName.setText("");
                         middleName.setText("");
                         lastName.setText("");
@@ -60,6 +63,7 @@ public class AddSiteManager extends AppCompatActivity {
                     public void onError(VolleyError error) {
                         Toast.makeText(getApplicationContext(), "Error creating object: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                         siteManagerID.setText("");
+                        position.setText("");
                         firstName.setText("");
                         middleName.setText("");
                         lastName.setText("");
