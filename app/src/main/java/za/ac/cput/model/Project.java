@@ -1,6 +1,6 @@
 package za.ac.cput.model;
 
-import java.sql.Driver;
+
 
 public class Project {
     private String projectId;

@@ -26,7 +26,7 @@ public class CreateSiteManager {
 
         void onError(VolleyError error);
     }
-    public void siteManagerCreation(String siteManagerId,String firstName, String middleName,
+    public void siteManagerCreation(String siteManagerId,String position,String firstName, String middleName,
                                        String lastName,String contact, String email,
                                        CreateSiteManager.CreateSiteManagerListener listener) {
         RequestQueue queue = Volley.newRequestQueue(context);
@@ -37,6 +37,7 @@ public class CreateSiteManager {
         try {
             // Add properties to the JSON object
             jsonObject.put("siteManagerId",siteManagerId);
+            jsonObject.put("position",position);
             jsonObject.put("firstName", firstName);
             jsonObject.put("middleName", middleName);
             jsonObject.put("lastName", lastName);

@@ -1,5 +1,8 @@
 package za.ac.cput.model;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class ProjectManager {
 private String projectManagerId;
 private String position;
@@ -10,11 +13,11 @@ private String position;
     private String email;
 
 
-    public ProjectManager() {
+    public ProjectManager(String projectManagerId) {
+        this.projectManagerId = projectManagerId;
     }
 
-    public ProjectManager(String projectManagerId, String position, String firstName,
-                          String middleName, String lastName, String contact, String email) {
+    public ProjectManager(String projectManagerId, String position, String firstName, String middleName, String lastName, String contact, String email) {
         this.projectManagerId = projectManagerId;
         this.position = position;
         this.firstName = firstName;
@@ -24,12 +27,26 @@ private String position;
         this.email = email;
     }
 
+    public ProjectManager(JSONObject projectManagerObject) throws JSONException {
+        this.projectManagerId = projectManagerObject.optString("projectManagerId");
+        this.position = projectManagerObject.optString("position");
+        this.firstName = projectManagerObject.optString("firstName");
+        this.middleName = projectManagerObject.optString("middleName");
+        this.lastName = projectManagerObject.optString("lastName");
+        this.contact = projectManagerObject.optString("contact");
+        this.email = projectManagerObject.optString("email");
+    }
+
+
+
+
     public String getProjectManagerId() {
         return projectManagerId;
     }
 
-    public void setProjectManagerId(String projectManagerId) {
+    public ProjectManager setProjectManagerId(String projectManagerId) {
         this.projectManagerId = projectManagerId;
+        return this;
     }
 
     public String getPosition() {
@@ -82,14 +99,7 @@ private String position;
 
     @Override
     public String toString() {
-        return "ProjectManager{" +
-                "projectManagerId='" + projectManagerId + '\'' +
-                ", position='" + position + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", contact='" + contact + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return
+                projectManagerId;
     }
 }

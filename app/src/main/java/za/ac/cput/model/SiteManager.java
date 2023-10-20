@@ -1,5 +1,8 @@
 package za.ac.cput.model;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class SiteManager {
     private String siteManagerId;
     private String position;
@@ -9,15 +12,28 @@ public class SiteManager {
     private String contact;
     private String email;
 
-    public SiteManager() {
+    public SiteManager(String siteManagerId) {
+        this.siteManagerId = siteManagerId;
+
+    }
+
+    public SiteManager(String siteManagerId, String position, String firstName, String middleName, String lastName, String contact, String email) {
+        this.siteManagerId = siteManagerId;
+        this.position = position;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.contact = contact;
+        this.email = email;
     }
 
     public String getSiteManagerId() {
         return siteManagerId;
     }
 
-    public void setSiteManagerId(String siteManagerId) {
+    public SiteManager setSiteManagerId(String siteManagerId) {
         this.siteManagerId = siteManagerId;
+        return this;
     }
 
     public String getPosition() {
@@ -70,14 +86,7 @@ public class SiteManager {
 
     @Override
     public String toString() {
-        return "SiteManager{" +
-                "siteManagerId='" + siteManagerId + '\'' +
-                ", position='" + position + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", contact='" + contact + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return siteManagerId;
+
     }
 }
