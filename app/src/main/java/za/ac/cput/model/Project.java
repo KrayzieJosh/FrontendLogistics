@@ -15,7 +15,12 @@ public class Project {
     public Project() {
     }
 
-    public Project(String projectId, String projectName, String projectStatus, Driver driver,ProjectManager projectManager, SiteManager siteManager, Company company, DeliveryOrder deliveryOrder) {
+    public Project(String projectName, String projectStatus) {
+        this.projectName = projectName;
+        this.projectStatus = projectStatus;
+    }
+
+    public Project(String projectId, String projectName, String projectStatus, Driver driver, ProjectManager projectManager, SiteManager siteManager, Company company, DeliveryOrder deliveryOrder) {
         this.projectId = projectId;
         this.projectName = projectName;
         this.projectStatus = projectStatus;
@@ -32,8 +37,9 @@ public class Project {
         return projectId;
     }
 
-    public void setProjectId(String projectId) {
+    public Project setProjectId(String projectId) {
         this.projectId = projectId;
+        return this;
     }
 
     public String getProjectName() {
@@ -105,4 +111,13 @@ public class Project {
                 ", deliveryOrder=" + deliveryOrder +
                 '}';
     }
-}
+
+    public Project copy(Project project){
+        this.projectId=project.projectId;
+        this.projectName=project.projectName;
+        this.projectStatus=project.projectStatus;
+
+
+
+        return this;
+    }}

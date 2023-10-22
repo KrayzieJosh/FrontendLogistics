@@ -1,5 +1,6 @@
 package za.ac.cput.create;
 import android.content.Context;
+import android.content.Intent;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -11,6 +12,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import za.ac.cput.model.Project;
+import za.ac.cput.update.UpdateProject;
+import za.ac.cput.view2.ViewAndUpdateProject;
 
 
 public class CreateProject {
@@ -23,6 +26,11 @@ public class CreateProject {
     }
 
     public interface CreateProjectListener {
+        void onSuccess(); // Define additional parameters if needed
+
+        void onError(VolleyError error);
+    }
+    public interface CreateSecondProjectListener {
         void onSuccess(); // Define additional parameters if needed
 
         void onError(VolleyError error);
@@ -42,7 +50,6 @@ public class CreateProject {
             jsonObject.put("projectId",project.getProjectId());
             jsonObject.put("projectName", project.getProjectName());
             jsonObject.put("projectStatus", project.getProjectStatus());
-            jsonObject.put("driver_id",project.getDriver());
 
             JSONObject projectManagerObject = new JSONObject();
             projectManagerObject.put("projectManagerId", project.getProjectManager().getProjectManagerId());
@@ -128,7 +135,21 @@ public class CreateProject {
                 listener.onError(new VolleyError("JSON Exception: " + e.getMessage()));
             }
         }
+        Intent intent = new Intent(context, ViewAndUpdateProject.class);
+
+        intent.putExtra("projectName", project.getProjectName());
+        intent.putExtra("projectStatus",project.getProjectStatus());
+        intent.putExtra("projectManagerId", project.getProjectManager().getProjectManagerId());
+        intent.putExtra("siteManagerId", project.getSiteManager().getSiteManagerId());
+        intent.putExtra("driverId", project.getDriver().getDriverId());
+        intent.putExtra("deliveryOrderId", project.getDeliveryOrder().getDeliveryOrderId());
+
+
+
+        context.startActivity(intent);
+
     }
+
 
 }
 
