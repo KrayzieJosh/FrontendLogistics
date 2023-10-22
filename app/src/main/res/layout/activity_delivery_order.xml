@@ -1,65 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="25dp"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <!-- Title TextView -->
-    <TextView
-        android:id="@+id/textViewDeliveryOrder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Delivery Order"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#322F2F"
-        android:textSize="50sp"
-        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/logo" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerInParent="true">
+        android:layout_marginHorizontal="25dp"
+        android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <!-- Delivery Type -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="9dp"
+            android:text="Please add your Delivery Order"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="22sp" />
+
+        <!-- Delivery Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:text="Delivery Order ID"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <EditText
             android:id="@+id/deliveryOrderId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:hint="Delivery Order ID" />
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="text" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <!-- Street Number -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="9dp"
+            android:text="Delivery Address"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <EditText
             android:id="@+id/deliveryAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:hint="Delivery Address" />
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="number" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <!-- Street Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="9dp"
+            android:text="Delivery Date"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <EditText
             android:id="@+id/deliveryDate"
             android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="text" />
+
+        <!-- Create Delivery Event Button -->
+        <Button
+            android:id="@+id/deliveryOrderSaveButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:hint="Delivery Date" />
-
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#FF7A39"
+            android:shadowColor="#FF7A39"
+            android:text="Create Delivery Order"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FF7A39"
+            app:iconTint="@android:color/holo_orange_dark"
+            app:strokeColor="#FF7A39" />
     </LinearLayout>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/deliveryOrderSaveButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#8BC34A"
-        android:minHeight="60dp"
-        android:text="Save Delivery Order"
-        android:textColorHighlight="#8BC34A"
-        android:textColorLink="#8BC34A"
-        app:backgroundTint="#8BC34A" />
-
-</RelativeLayout>
+</LinearLayout>
