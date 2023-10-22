@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +24,7 @@ import za.ac.cput.model.Driver;
 import za.ac.cput.model.Project;
 import za.ac.cput.model.ProjectManager;
 import za.ac.cput.model.SiteManager;
+import za.ac.cput.view2.ViewAndUpdateProject;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -36,6 +38,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -137,6 +140,7 @@ public class Projects extends AppCompatActivity implements AdapterView.OnItemSel
 
 
 
+
                     project.projectCreation(createNewProject , new CreateProject.CreateProjectListener() {
 
                         @Override
@@ -147,10 +151,10 @@ public class Projects extends AppCompatActivity implements AdapterView.OnItemSel
                             Log.d("Debug", "theDriver: " + theDriver);
                             Log.d("Debug", "projMan: " + selectedProjectManager);
                             Log.d("Debug", "siteMan: " + siteMan);
-
                             Log.d("Debug", "deliveryOrd: " + order);
+
+
                             Toast.makeText(getApplicationContext(), "Object created successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Projects.this, LandingPage.class));
                         }
 
                         @Override
@@ -170,6 +174,7 @@ public class Projects extends AppCompatActivity implements AdapterView.OnItemSel
 
 
             }
+
         });
 
     }
