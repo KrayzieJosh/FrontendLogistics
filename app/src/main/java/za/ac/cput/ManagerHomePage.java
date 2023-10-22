@@ -1,24 +1,21 @@
 package za.ac.cput;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import za.ac.cput.create.CreateDriver;
 import za.ac.cput.create.CreateMaterialQuote;
 import za.ac.cput.view.AddProjectManager;
 import za.ac.cput.view.AddSiteManager;
+import androidx.cardview.widget.CardView;
 import za.ac.cput.view.Delivery;
 import za.ac.cput.view.DriverRegistration;
 import za.ac.cput.view.History;
-import za.ac.cput.view.Location;
 import za.ac.cput.view.LocationActivity;
 import za.ac.cput.view.Projects;
 import za.ac.cput.view.Quotes;
@@ -108,5 +105,9 @@ public class ManagerHomePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+}
+
+        
     }
 }

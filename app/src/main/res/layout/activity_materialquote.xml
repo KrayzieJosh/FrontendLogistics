@@ -1,71 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="25dp"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textViewMaterialQuote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Material Quote"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#322F2F"
-        android:textSize="50sp"
-        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerInParent="true">
+        android:layout_marginHorizontal="25dp"
+        android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="9dp"
+            android:text="Please add Material Quote details:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:text="Material Name"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <EditText
             android:id="@+id/form_textFieldName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:hint="Material_Name" />
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="text" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="9dp"
+            android:text="Price"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <EditText
             android:id="@+id/form_textFieldPrice"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:hint="Price" />
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="number" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="9dp"
+            android:text="Quantity"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <EditText
             android:id="@+id/form_textFieldQuantity"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:hint="Quantity" />
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="text" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="9dp"
+            android:text="Weight"
+            android:textStyle="bold"
+
+            android:typeface="serif" />
+
+        <EditText
             android:id="@+id/form_textFieldWeight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:hint="Weight" />
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="text" />
 
+
+        <Button
+            android:id="@+id/form_buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#FF7A39"
+            android:shadowColor="#FF7A39"
+            android:text="Create Delivery Event"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FF7A39"
+            app:iconTint="@android:color/holo_orange_dark"
+            app:strokeColor="#FF7A39" />
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/form_buttonSave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#8BC34A"
-        android:minHeight="60dp"
-        android:text="Save Quote"
-        android:textColorHighlight="#8BC34A"
-        android:textColorLink="#8BC34A"
-        app:backgroundTint="#8BC34A" />
-
-</RelativeLayout>
+</LinearLayout>
