@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,7 +35,8 @@ public class AddSiteManager extends AppCompatActivity {
         addManager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                isFormValid();
+                if (isFormValid()) {
                 String id = siteManagerID.getText().toString();
                 String siteManagerPosition=position.getText().toString();
                 String fName=firstName.getText().toString();
@@ -70,10 +72,45 @@ public class AddSiteManager extends AppCompatActivity {
                         contact.setText("");
                         email.setText("");
                     }
-                });
+                }); } else {
+                    // Form is not valid, show error messages or take appropriate action
+                }
             }
         });
 
+
+    }
+    public boolean isFormValid() {
+        // Check EditText fields for emptiness
+        if (TextUtils.isEmpty(siteManagerID.getText().toString())) {
+            siteManagerID.setError("Field cannot be empty");
+            return false;
+        }
+        if (TextUtils.isEmpty(position.getText().toString())) {
+            position.setError("Field cannot be empty");
+            return false;
+        }
+        if (TextUtils.isEmpty(firstName.getText().toString())) {
+            firstName.setError("Field cannot be empty");
+            return false;
+        }
+        if (TextUtils.isEmpty(middleName.getText().toString())) {
+            middleName.setError("Field cannot be empty");
+            return false;
+        }
+        if (TextUtils.isEmpty(lastName.getText().toString())) {
+            lastName.setError("Field cannot be empty");
+            return false;
+        }
+        if (TextUtils.isEmpty(contact.getText().toString())) {
+            contact.setError("Field cannot be empty");
+            return false;
+        }
+        if (TextUtils.isEmpty(email.getText().toString())) {
+            email.setError("Field cannot be empty");
+            return false;
+        }
+        return true;
 
     }
 }
