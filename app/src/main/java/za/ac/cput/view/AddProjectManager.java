@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ import com.android.volley.VolleyError;
 
 import za.ac.cput.R;
 import za.ac.cput.create.CreateProjectManager;
+import za.ac.cput.view2.ViewProjectManager;
 
 public class AddProjectManager extends AppCompatActivity {
 EditText projectManagerID,firstName,middleName,lastName,contact,email,projectManagerPosition;
@@ -36,7 +38,8 @@ Button addManager;
         addManager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                isFormValid();
+                if (isFormValid()) {
                 String id = projectManagerID.getText().toString();
                 String position= projectManagerPosition.getText().toString();
                 String fName=firstName.getText().toString();
@@ -50,7 +53,7 @@ Button addManager;
                     @Override
                     public void onSuccess() {
                         Toast.makeText(getApplicationContext(), "Object created successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AddProjectManager.this,Projects.class));
+                        startActivity(new Intent(AddProjectManager.this, ViewProjectManager.class));
                         projectManagerID.setText("");
                         projectManagerPosition.setText("");
                         firstName.setText("");
@@ -73,9 +76,42 @@ Button addManager;
                         email.setText("");
                     }
                 });
+                } else {
+                    // Form is not valid, show error messages or take appropriate action
+                }
             }
         });
 
+}  public boolean isFormValid() {
+        // Check EditText fields for emptiness
+        if (TextUtils.isEmpty(projectManagerID.getText().toString())) {
+            projectManagerID.setError("Field cannot be empty");
+            return false;
+        }
+        if (TextUtils.isEmpty(projectManagerPosition.getText().toString())) {
+            projectManagerPosition.setError("Field cannot be empty");
+            return false;
+        }
+        if (TextUtils.isEmpty(firstName.getText().toString())) {
+            firstName.setError("Field cannot be empty");
+            return false;
+        }
+        if (TextUtils.isEmpty(middleName.getText().toString())) {
+            middleName.setError("Field cannot be empty");
+            return false;
+        }
+        if (TextUtils.isEmpty(lastName.getText().toString())) {
+            lastName.setError("Field cannot be empty");
+            return false;
+        }
+        if (TextUtils.isEmpty(contact.getText().toString())) {
+            contact.setError("Field cannot be empty");
+            return false;
+        }
+        if (TextUtils.isEmpty(email.getText().toString())) {
+            email.setError("Field cannot be empty");
+            return false;
+        }
+        return true;
 
-    }
-}
+    }}
