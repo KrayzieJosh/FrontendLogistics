@@ -1,101 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".view.AddProjectManager">
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
+
+    <ImageView
+        android:id="@+id/imageView6"
         android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginHorizontal="25dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="9dp"
+            android:text="Enter Project Manager Details"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:text="Assign ID to a manager"
+            android:textStyle="bold"
+            android:typeface="serif" />
 
         <EditText
             android:id="@+id/project_manager_id_txt"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:hint="Assign an ID to the manager"
-            android:textAllCaps="true"
-            android:textSize="20sp"
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="9dp"
+            android:text="Project Manager Position"
             android:textStyle="bold"
             android:typeface="serif" />
+
         <EditText
             android:id="@+id/project_manager_position_txt"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
-            android:hint="Project Manager Position"
-            android:textSize="20sp"
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="9dp"
+            android:text="Project Manager First Name"
             android:textStyle="bold"
             android:typeface="serif" />
+
         <EditText
             android:id="@+id/project_manager_name_txt"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
-            android:hint="Project Manager First Name"
-            android:textSize="20sp"
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="9dp"
+            android:text="Project Manager Middle Name"
             android:textStyle="bold"
+
             android:typeface="serif" />
 
         <EditText
             android:id="@+id/project_manager_middle_name_txt"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
-            android:hint="Project Manager Middle Name"
-            android:textSize="20sp"
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="9dp"
+            android:text="Project Manager Last Name"
             android:textStyle="bold"
             android:typeface="serif" />
 
         <EditText
             android:id="@+id/project_manager_last_name_txt"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
-            android:hint="Project Manager Last Name"
-            android:textSize="20sp"
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="9dp"
+            android:text="Project Manager Contact Number"
             android:textStyle="bold"
             android:typeface="serif" />
 
         <EditText
             android:id="@+id/project_manager_contact_txt"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
-            android:hint="Project Manager Contact Number"
-            android:textSize="20sp"
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="9dp"
+            android:text="Project Manager Email"
             android:textStyle="bold"
             android:typeface="serif" />
 
         <EditText
             android:id="@+id/project_manager_email_txt"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
-            android:hint="Project Manager Email"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:typeface="serif" />
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="text" />
 
+        <Button
+            android:id="@+id/add_project_manager_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#FF7A39"
+            android:shadowColor="#FF7A39"
+            android:text="Add Manager"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FF7A39"
+            app:iconTint="@android:color/holo_orange_dark"
+            app:strokeColor="#FF7A39" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/add_project_manager_btn"
-        android:layout_width="162dp"
-        android:layout_height="61dp"
-        android:text="Add Manager"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
