@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION" />
-    <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyCNLpXoSOY6SYu6ziGUassM4dLhVR5TuWQ" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
 
     <application
         android:allowBackup="true"
@@ -18,6 +18,9 @@
         android:theme="@style/Theme.FrontendLogistics"
         tools:node="merge"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCNLpXoSOY6SYu6ziGUassM4dLhVR5TuWQ" />
         <activity
             android:name=".view2.Calendar"
             android:exported="false" />
@@ -52,7 +55,7 @@
             android:name=".ManagerHomePage"
             android:exported="false" />
         <activity
-            android:name=".view.Location"
+            android:name=".view2.CustomMapFragment"
             android:exported="false" />
         <activity
             android:name=".view.MaterialQuoteCreate"

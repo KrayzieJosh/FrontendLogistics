@@ -8,6 +8,16 @@
         <item>4</item>
         <item>5</item>
     </array>
+    <!-- Toast Messages -->
+    <string name="toast_manage_projects">Manage Projects</string>
+    <string name="toast_delivery">Delivery</string>
+    <string name="toast_quotes">Quotes</string>
+    <string name="toast_track_driver">Track Driver</string>
+    <string name="toast_location_manager">Location Manager</string>
+    <string name="toast_delivery_history">Delivery History</string>
+
+    <string name="google_maps_key">AIzaSyCNLpXoSOY6SYu6ziGUassM4dLhVR5TuWQ</string>
+    <string name="map_view_description">Map View</string>
     <string name="display_track">display track</string>
     <string name="enter_destination_location">Enter Destination Location</string>
     <string name="enter_source_location">Enter source Location</string>
