@@ -34,7 +34,7 @@ public class ReadAllDriversActivity extends AppCompatActivity {
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://192.168.0.2:8080/driver/getall";
+        String url = "http://192.168.0.2:8080/driver/getAll";
         // Request a JSON response from the provided URL.
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
@@ -70,7 +70,7 @@ public class ReadAllDriversActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                textView.setText("Failed to fetch Driver Events.");
+                textView.setText("Failed to fetch Driver.");
 
             }
         });
